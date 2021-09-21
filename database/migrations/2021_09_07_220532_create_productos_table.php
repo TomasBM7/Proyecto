@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePersonalTurnosTable extends Migration
+class CreateProductosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreatePersonalTurnosTable extends Migration
      */
     public function up()
     {
-        Schema::create('personal-turnos', function (Blueprint $table) {
+        Schema::create('productos', function (Blueprint $table) {
             $table->id();
+            $table->string('Nombre de Producto');
+            $table->text('Descripción');
+            $table->integer('Stock');
+            $table->integer('Precio Unitario');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreatePersonalTurnosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personal-turnos');
+        Schema::dropIfExists('productos');
     }
 }

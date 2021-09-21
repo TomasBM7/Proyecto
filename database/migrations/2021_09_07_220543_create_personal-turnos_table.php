@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateViviendasTable extends Migration
+class CreatePersonalTurnosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateViviendasTable extends Migration
      */
     public function up()
     {
-        Schema::create('viviendas', function (Blueprint $table) {
+        Schema::create('personal-turnos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('personal_id');
+            $table->unsignedBigInteger('turno_id');
             $table->text('Descripción');
-            $table->string('Tipo de Vivienda');
-            $table->string('Ubicación');
-            $table->string('Historial de Reparaciones');
+            $table->date('Fecha');
+            $table->foreign('personal_id')->references('id')->on('personals');
+            $table->foreign('turno_id')->references('id')->on('turnos');
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ class CreateViviendasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('viviendas');
+        Schema::dropIfExists('personal-turnos');
     }
 }

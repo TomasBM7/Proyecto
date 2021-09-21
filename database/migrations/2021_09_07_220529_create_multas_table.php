@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFacturaServiciosTable extends Migration
+class CreateMultasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateFacturaServiciosTable extends Migration
      */
     public function up()
     {
-        Schema::create('factura-servicios', function (Blueprint $table) {
+        Schema::create('multas', function (Blueprint $table) {
             $table->id();
+            $table->string('Nombre de Multa');
+            $table->text('Descripción');
+            $table->integer('Costo');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateFacturaServiciosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('factura-servicios');
+        Schema::dropIfExists('multas');
     }
 }

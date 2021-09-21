@@ -15,6 +15,9 @@ class CreateEstadoCivilsTable extends Migration
     {
         Schema::create('estado_civils', function (Blueprint $table) {
             $table->id();
+            $table->text('Descripción');
+            $table->integer('Numero de Habitantes');
+            $table->string('Niños');
             $table->timestamps();
         });
     }

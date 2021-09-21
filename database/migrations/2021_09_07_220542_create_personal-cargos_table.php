@@ -15,6 +15,12 @@ class CreatePersonalCargosTable extends Migration
     {
         Schema::create('personal-cargos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('personal_id');
+            $table->unsignedBigInteger('cargo_id');
+            $table->text('Descripción');
+            $table->date('Fecha');
+            $table->foreign('personal_id')->references('id')->on('personals');
+            $table->foreign('cargo_id')->references('id')->on('cargos');
             $table->timestamps();
         });
     }

@@ -15,7 +15,8 @@ class CreateMascotasTable extends Migration
     {
         Schema::create('mascotas', function (Blueprint $table) {
             $table->id();
-            $table->text('descripción');
+            $table->text('Descripción');
+            $table->string('Tipo de Mascota');
             $table->timestamps();
         });
     }
