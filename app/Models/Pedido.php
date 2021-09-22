@@ -4,6 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Factura;
+use App\Models\personal;
+use App\Models\Proveedores;
+use App\Models\Productos;
 
 class Pedido extends Model
 {

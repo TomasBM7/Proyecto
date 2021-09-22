@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Vivienda;
 use App\Models\Mascotas;
 use App\Models\Estado_civil;
+use App\Models\Servicios;
+use App\Models\Factura;
+use App\Models\Pagos;
 
 class Cliente extends Model
 {

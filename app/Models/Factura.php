@@ -4,6 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Clientes;
+use App\Models\servicios;
+use App\Models\Factura_servicio;
+use App\Models\factura_multa;
+use App\Models\pagos;
+use App\Models\pedido;
+use App\Models\personal;
 
 class Factura extends Model
 {
