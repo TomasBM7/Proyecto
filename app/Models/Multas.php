@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Multas extends Model
 {
     use HasFactory;
+
+    public function factura_multa(){
+        return $this->belongsTo(factura_multa::class);
+    }
 }

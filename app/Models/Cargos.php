@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Cargos extends Model
 {
     use HasFactory;
+
+    public function personal_cargo(){
+        return $this->belongsTo(personal_cargo::class);
+    }
 }

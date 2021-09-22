@@ -13,4 +13,8 @@ class Proveedores extends Model
     public function producto(){
         return $this->belongsTo(Productos::class);
     }
+
+    public function pedido(){
+        return $this->belongsTo(pedido::class);
+    }
 }

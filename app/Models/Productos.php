@@ -14,4 +14,8 @@ class Productos extends Model
         return $this->belongsTo(Proveedores::class);
     }
 
+    public function pedido(){
+        return $this->belongsTo(Pedido::class);
+    }
+
 }

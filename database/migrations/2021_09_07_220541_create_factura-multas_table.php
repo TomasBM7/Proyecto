@@ -17,9 +17,8 @@ class CreateFacturaMultasTable extends Migration
             $table->id();
             $table->unsignedBigInteger('multa_id');
             $table->unsignedBigInteger('factura_id');
-            $table->string('Tipo de Pago');
-            $table->text('Comprobante');
-            $table->text('Historial de Pagos');
+            $table->text('Descripcion');
+            $table->date('fecha');
             $table->foreign('multa_id')->references('id')->on('multas');
             $table->foreign('factura_id')->references('id')->on('facturas');
             $table->timestamps();

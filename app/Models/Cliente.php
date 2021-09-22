@@ -23,6 +23,18 @@ class Cliente extends Model
     public function estado_civil(){
         return $this->hasOne(Estado_civil::class);
     }
+
+    public function servicios(){
+        return $this->belongsTo(servicios::class);
+    }
+
+    public function factura(){
+        return $this->belongsTo(factura::class);
+    }
+
+    public function pagos(){
+        return $this->belongsTo(pagos::class);
+    }
 }
 
 
