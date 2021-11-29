@@ -16,6 +16,20 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('client.index')" :active="request()->routeIs('client.*')">
+                        {{ __('Client') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('personal.index')" :active="request()->routeIs('personal.*')">
+                        {{ __('Personal') }}
+                    </x-nav-link>
+                </div>
+                
+
+  
+
             </div>
 
             <!-- Settings Dropdown -->

@@ -15,9 +15,9 @@ class CreateMultasTable extends Migration
     {
         Schema::create('multas', function (Blueprint $table) {
             $table->id();
-            $table->string('Nombre de Multa');
+            $table->string('nombre_multa');
             $table->text('Descripción');
-            $table->integer('Costo');
+            $table->integer('precio');
             $table->timestamps();
         });
     }

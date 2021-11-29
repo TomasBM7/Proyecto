@@ -15,15 +15,16 @@ class CreatePersonalsTable extends Migration
     {
         Schema::create('personals', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cargo_id');
-            $table->unsignedBigInteger('turno_id');
             $table->string('nombres');
-            $table->string('apeliidos');
+            $table->string('apellidos');
             $table->integer('ci');
             $table->integer('telefono');
             $table->string('email');
-            $table->foreign('cargo_id')->references('id')->on('cargos');
-            $table->foreign('turno_id')->references('id')->on('turnos');
+            $table->string('direccion');
+            $table->unsignedBigInteger('turnos_id');
+            $table->unsignedBigInteger('cargos_id');
+            $table->foreign('turnos_id')->references('id')->on('turnos');
+            $table->foreign('cargos_id')->references('id')->on('cargos');
             $table->timestamps();
         });
     }

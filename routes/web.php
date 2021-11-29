@@ -1,5 +1,12 @@
 <?php
-
+use App\Http\Controllers\TurnoController;
+use App\Http\Controllers\CargoController;
+use App\Http\Controllers\PersonalController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\DespensaController;
+use App\Http\Controllers\EstadoController;
+use App\Http\Controllers\MultaController;
+use App\Http\Controllers\ProveedorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +24,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    Route::resource('client', ClientController::class);
+    Route::resource('personal', PersonalController::class);
+    Route::resource('turno', TurnoController::class);
+    Route::resource('cargo', CargoController::class);
+    Route::resource('despensa', DespensaController::class);
+    Route::resource('estado', EstadoController::class);
+    Route::resource('multa', MultaController::class);
+    Route::resource('proveedor', ProveedorController::class);
+    Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
+    })->name('dashboard');
+    Route::get('/confi', function () {
+        return view('confi');
+        })->name('confi');
+});

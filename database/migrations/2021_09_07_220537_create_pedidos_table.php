@@ -18,10 +18,10 @@ class CreatePedidosTable extends Migration
             $table->unsignedBigInteger('personal_id');
             $table->unsignedBigInteger('proveedor_id');
             $table->unsignedBigInteger('producto_id');
-            $table->integer('Cantidad');
-            $table->text('Detalle');
-            $table->integer('Subtotal');
-            $table->integer('Total');
+            $table->integer('cantidad');
+            $table->text('detalle');
+            $table->integer('subtotal');
+            $table->integer('total');
             $table->foreign('personal_id')->references('id')->on('personals');
             $table->foreign('proveedor_id')->references('id')->on('proveedores');
             $table->foreign('producto_id')->references('id')->on('productos');

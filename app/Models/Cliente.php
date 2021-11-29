@@ -4,40 +4,36 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Vivienda;
-use App\Models\Mascotas;
-use App\Models\Estado_civil;
+use App\Models\Estado;
+use App\Models\Despensa;
 use App\Models\Servicios;
 use App\Models\Factura;
-use App\Models\Pagos;
+use App\Models\Multa;
 
 class Cliente extends Model
 {
     use HasFactory;
 
-    public function vivienda(){
-        return $this->hasOne(Vivienda::class);
+    public function estado(){
+        return $this->hasOne(Estado::class);
     }
 
-    public function mascotas(){
-        return $this->belongsTo(Mascotas::class);
-    }
-
-    public function estado_civil(){
-        return $this->hasOne(Estado_civil::class);
+    public function despensa(){
+        return $this->hasOne(Despensa::class);
     }
 
     public function servicios(){
-        return $this->belongsTo(servicios::class);
+        return $this->belongsTo(Servicios::class);
     }
 
     public function factura(){
-        return $this->belongsTo(factura::class);
+        return $this->belongsTo(Factura::class);
     }
 
-    public function pagos(){
-        return $this->belongsTo(pagos::class);
+    public function multa(){
+        return $this->belongsTo(Multa::class);
     }
+
 }
 
 

@@ -4,28 +4,28 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\factura;
-use App\Models\pedido;
-use App\Models\Personal_cargo;
-use App\Models\personal_turno;
+use App\Models\Factura;
+use App\Models\Pedido;
+use App\Models\Cargo;
+use App\Models\Turno;
 
 class Personal extends Model
 {
     use HasFactory;
 
     public function factura(){
-        return $this->belongsTo(factura::class);
+        return $this->belongsTo(Factura::class);
     }
 
     public function pedido(){
-        return $this->belongsTo(pedido::class);
+        return $this->belongsTo(Pedido::class);
     }
 
-    public function personal_cargo(){
-        return $this->belongsTo(personal_cargo::class);
+    public function cargo(){
+        return $this->hasOne(Cargo::class);
     }
 
-    public function personal_turno(){
-        return $this->belongsTo(personal_turno::class);
+    public function turno(){
+        return $this->hasOne(Turno::class);
     }
 }
