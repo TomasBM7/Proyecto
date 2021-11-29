@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Factura;
 use App\Models\personal;
-use App\Models\Proveedores;
+use App\Models\Proveedors;
 use App\Models\Productos;
 
 class Pedido extends Model
@@ -22,7 +22,7 @@ class Pedido extends Model
     }
 
     public function proveedores(){
-        return $this->belongsTo(Proveedores::class);
+        return $this->belongsTo(Proveedors::class);
     }
 
     public function productos(){

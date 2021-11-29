@@ -66,6 +66,22 @@
             </div>
         </div>
     </section>
+    <div id="mapa">
+        <script src="https.//maps.goolgeapis.com/maps/apis/js?key=AIzaSyBwJdpplCKoABeJNyB54PEUZcN-clnTGbo"></script>
+        <script>
+            google.maps.event.addDomListener(window,"load", function(){
+                var mapElement = document.getElementById('mapa')
+                var map = new google.maps.Map(mapElement,{
+                    center:{
+                        lat: -22.008441844217305, 
+                        lng: -63.67770959527241
+                    },
+                    zoom: 15
+                })
+            })
+        </script>
+        </div>
+
 </div>
                 </div>
             </div>

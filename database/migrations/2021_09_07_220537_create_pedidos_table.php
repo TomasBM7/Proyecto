@@ -23,7 +23,7 @@ class CreatePedidosTable extends Migration
             $table->integer('subtotal');
             $table->integer('total');
             $table->foreign('personal_id')->references('id')->on('personals');
-            $table->foreign('proveedor_id')->references('id')->on('proveedores');
+            $table->foreign('proveedor_id')->references('id')->on('proveedors');
             $table->foreign('producto_id')->references('id')->on('productos');
             $table->timestamps();
         });
